@@ -1,7 +1,11 @@
 (() => {
   // Header shadow on scroll
   const header = document.querySelector('.header');
-  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 40);
+  const pagetop = document.querySelector('.pagetop');
+  const onScroll = () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 40);
+    pagetop.classList.toggle('is-show', window.scrollY > 600);
+  };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
